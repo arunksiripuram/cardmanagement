@@ -22,7 +22,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddSingleton<IMongoClient, MongoClient>(sp =>
 {
-    var mongoUrl = "mongodb+srv://arunksiripuram:r63M25Fui07I0RHs@cluster1.qzou5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1","; // Replace with your MongoDB URI
+    var mongoUrl = "mongodb+srv://arunksiripuram:r63M25Fui07I0RHs@cluster1.qzou5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"; // Replace with your MongoDB URI
     return new MongoClient(mongoUrl);
 });
 
