@@ -1,0 +1,364 @@
+<div class="form-container">
+    <h3 class="my-3">{{ formConfig.cardLabelDetails }}</h3>
+
+    <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.cardHolderLabel }}</label>
+                <input
+                type="text"
+                formControlName="cardHolder"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.cardHolderPlaceholder }}</label>
+                <input
+                type="text"
+                formControlName="cardHolderPlaceholder"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.cardTypeLabel }}</label>
+                <input
+                type="text"
+                formControlName="cardTypeLabel"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.cardNumberLabel }}</label>
+                <input
+                type="text"
+                formControlName="cardNumberLabel"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.cardNumberPlaceholder }}</label>
+                <input
+                type="text"
+                formControlName="cardNumberPlaceholder"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.cvvLabel }}</label>
+                <input
+                type="text"
+                formControlName="cvvLabel"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.cvvPlaceholder }}</label>
+                <input
+                type="text"
+                formControlName="cvvPlaceholder"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.expirationDateLabel }}</label>
+                <input
+                type="text"
+                formControlName="expirationDateLabel"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.expirationMonthPlaceholder }}</label>
+                <input
+                type="text"
+                formControlName="expirationMonthPlaceholder"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.expirationYearPlaceholder }}</label>
+                <input
+                type="text"
+                formControlName="expirationYearPlaceholder"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.addressLabel }}</label>
+                <input
+                type="text"
+                formControlName="addressLabel"
+                />
+            </div>
+        </div>        
+        
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.addressLine1Placeholder }}</label>
+                <input
+                type="text"
+                formControlName="addressLine1Placeholder"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.addressLine2Placeholder }}</label>
+                <input
+                type="text"
+                formControlName="addressLine2Placeholder"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.cityLabel }}</label>
+                <input
+                type="text"
+                formControlName="cityPlaceholder"
+                />
+            </div>
+        </div>
+        
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.stateLabel }}</label>
+                <input
+                type="text"
+                formControlName="stateLabel"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.stateSelectDefault }}</label>
+                <input
+                type="text"
+                formControlName="stateSelectDefault"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.zipLabel }}</label>
+                <input
+                type="text"
+                formControlName="zipLabel"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.zipPlaceholder }}</label>
+                <input
+                type="text"
+                formControlName="zipPlaceholder"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+        <!-- Card Holder -->
+            <div class="form-group">
+                <label>{{ formConfig.countryLabel }}</label>
+                <input
+                type="text"
+                formControlName="countryLabel"
+                />
+            </div>
+        </div>
+
+        <div class="col-4">
+            <!-- Card Holder -->
+                <div class="form-group">
+                    <label>{{ formConfig.countrySelectDefault }}</label>
+                    <input
+                    type="text"
+                    formControlName="countrySelectDefault"
+                    />
+                </div>
+            </div>
+
+            <div class="col-4">
+                <!-- Card Holder -->
+                    <div class="form-group">
+                        <label>{{ formConfig.useAsPrimaryCardLabel }}</label>
+                        <input
+                        type="text"
+                        formControlName="useAsPrimaryCardLabel"
+                        />
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <!-- Card Holder -->
+                        <div class="form-group">
+                            <label>{{ formConfig.footerText }}</label>
+                            <input
+                            type="text"
+                            formControlName="footerText"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <!-- Card Holder -->
+                            <div class="form-group mr-4" >
+                                <label>{{ formConfig.addCardButtonText }}</label>
+                                <input
+                                type="text"
+                                formControlName="addCardButtonText"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <!-- Card Holder -->
+                                <div class="form-group">
+                                    <label>{{ formConfig.cancelButtonText }}</label>
+                                    <input
+                                    type="text"
+                                    formControlName="cancelButtonText"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <!-- Card Holder -->
+                                    <div class="form-group">
+                                        <label>{{ formConfig.newsletterLabel }}</label>
+                                        <input
+                                        type="text"
+                                        formControlName="newsletterLabel"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <!-- Card Holder -->
+                                        <div class="form-group">
+                                            <label>{{ formConfig.newsletterPlaceholder }}</label>
+                                            <input
+                                            type="text"
+                                            formControlName="newsletterPlaceholder"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <!-- Card Holder -->
+                                            <div class="form-group">
+                                                <label>{{ formConfig.signUpButtonText }}</label>
+                                                <input
+                                                type="text"
+                                                formControlName="signUpButtonText"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-4">
+                                            <!-- Card Holder -->
+                                                <div class="form-group">
+                                                    <label>{{ formConfig.surveyText }}</label>
+                                                    <input
+                                                    type="text"
+                                                    formControlName="surveyText"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-4">
+                                                <!-- Card Holder -->
+                                                    <div class="form-group">
+                                                        <label>{{ formConfig.surveyLinkText }}</label>
+                                                        <input
+                                                        type="text"
+                                                        formControlName="surveyLinkText"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <!-- Card Holder -->
+                                                        <div class="form-group">
+                                                            <label>{{ formConfig.termsAndConditionsText }}</label>
+                                                            <input
+                                                            type="text"
+                                                            formControlName="termsAndConditionsText"
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-4">
+                                                        <!-- Card Holder -->
+                                                            <div class="form-group">
+                                                                <label>{{ formConfig.privacyPolicyText }}</label>
+                                                                <input
+                                                                type="text"
+                                                                formControlName="privacyPolicyText"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        </div>
+    
+
+        
+  
+      <!-- Buttons -->
+      <div class="button-group">
+        <button type="button" (click)="cancel()" class="mr-2">{{ formConfig.cancelButtonText }}</button>
+        <button type="submit" [disabled]="cardForm.invalid">
+          {{ formConfig.addCardButtonText }}
+        </button>
+      </div>
+  
+      <div class="footer-text">
+        {{ formConfig.termsAndConditionsText }}
+      </div>
+    </form>
+  </div>
+  

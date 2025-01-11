@@ -1,0 +1,219 @@
+<div class="form-container">
+    <h2>ADD NEW CARD</h2>
+    <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label>{{labelNames.cardHolderLabel}}</label>
+                    <input type="text" formControlName="cardHolder" placeholder="Enter Card Holder Name..." />
+                  </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label>{{labelNames.cardTypeLabel}}</label>
+                    <select formControlName="cardType">
+                      <option value="">Select...</option>
+                      <option *ngFor="let type of cardTypes" [value]="type">{{ type }}</option>
+                    </select>
+                  </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label>{{labelNames.cardNumberLabel}}</label>
+                    <input type="text" formControlName="cardNumber" placeholder="Enter Card Number..." />
+                  </div>
+            </div>
+
+            <div class="col-12 mt-2">
+                <div class="form-group">
+                    <label>
+                      <input type="checkbox" formControlName="primaryCard" /> {{labelNames.useAsPrimaryCardLabel}}
+                    </label>
+                  </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>{{labelNames.expirationDateLabel}}</label>
+                      <div class="row">
+                        
+                        <div class="col-6">
+                            <select formControlName="expMonth">
+                                <option value="" disabled>{{labelNames.expirationMonthPlaceholder}}...</option>
+                                <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+                              </select>
+                        </div>
+                      <div class="col-6">
+                        <select formControlName="expYear">
+                            <option value="" disabled>{{labelNames.expirationYearPlaceholder}}...</option>
+                            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+                          </select>
+                      </div>
+                      </div>
+                      
+                    </div>
+            </div>
+        </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label>{{labelNames.cvvLabel}}</label>
+                    <input type="text" formControlName="cvv" placeholder="Enter CVV..." />
+                  </div>
+                </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label>
+                      <input type="checkbox" formControlName="newAddress" /> New Address
+                    </label>
+                  </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label>{{labelNames.addressLabel}}</label>
+                    <input type="text" formControlName="addressLine1" placeholder="Enter Address Line 1..." />
+                  </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label>{{labelNames.addressLabel}}</label>
+                    <input type="text" formControlName="addressLine2" placeholder="Enter Address Line 2..." />
+                  </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-row">
+                    <div class="form-group">
+                      <label>{{labelNames.cityLabel}}</label>
+                      <input type="text" formControlName="city" placeholder="Enter City..." />
+                    </div>
+            </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label>{{labelNames.stateLabel}}</label>
+                    <select formControlName="state">
+                      <option value="" disabled>Select State...</option>
+                      <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                    </select>
+                  </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label>{{labelNames.zipLabel}}</label>
+                    <input type="text" formControlName="zip" placeholder="Enter Zip..." />
+                  </div>
+                </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <label>{{labelNames.countryLabel}}</label>
+                    <select formControlName="country">
+                      <option value="" disabled>Select Country...</option>
+                      <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                    </select>
+                  </div>
+            </div>
+        </div>
+      <!-- <div class="form-group">
+        <label>{{labelNames.cardHolderLabel}}</label>
+        <input type="text" formControlName="cardHolder" placeholder="Enter Card Holder Name..." />
+      </div>
+  
+      <div class="form-group">
+        <label>{{labelNames.cardTypeLabel}}</label>
+        <select formControlName="cardType">
+          <option value="">Select...</option>
+          <option *ngFor="let type of cardTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label>{{labelNames.cardNumberLabel}}</label>
+        <input type="text" formControlName="cardNumber" placeholder="Enter Card Number..." />
+      </div>
+  
+      <div class="form-group">
+        <label>
+          <input type="checkbox" formControlName="primaryCard" /> {{labelNames.useAsPrimaryCardLabel}}
+        </label>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{labelNames.expirationDateLabel}}</label>
+          <select formControlName="expMonth">
+            <option value="" disabled>{{labelNames.expirationMonthPlaceholder}}...</option>
+            <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+          </select>
+          <select formControlName="expYear">
+            <option value="" disabled>{{labelNames.expirationYearPlaceholder}}...</option>
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label>{{labelNames.cvvLabel}}</label>
+          <input type="text" formControlName="cvv" placeholder="Enter CVV..." />
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>
+          <input type="checkbox" formControlName="newAddress" /> New Address
+        </label>
+      </div>
+  
+      <div class="form-group">
+        <label>{{labelNames.addressLabel}}</label>
+        <input type="text" formControlName="addressLine1" placeholder="Enter Address Line 1..." />
+      </div>
+  
+      <div class="form-group">
+        <label>{{labelNames.addressLabel}}</label>
+        <input type="text" formControlName="addressLine2" placeholder="Enter Address Line 2..." />
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{labelNames.cityLabel}}</label>
+          <input type="text" formControlName="city" placeholder="Enter City..." />
+        </div>
+  
+        <div class="form-group">
+          <label>{{labelNames.stateLabel}}</label>
+          <select formControlName="state">
+            <option value="" disabled>Select State...</option>
+            <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label>{{labelNames.zipLabel}}</label>
+          <input type="text" formControlName="zip" placeholder="Enter Zip..." />
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>{{labelNames.countryLabel}}</label>
+        <select formControlName="country">
+          <option value="" disabled>Select Country...</option>
+          <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+        </select>
+      </div> -->
+  
+      <div class="button-group">
+        <button type="button" (click)="cancel()">Cancel</button>
+        <button type="submit" [disabled]="cardForm.invalid">+ Add New Card</button>
+      </div>
+    </form>
+  </div>
+  
