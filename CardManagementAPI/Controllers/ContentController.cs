@@ -29,6 +29,7 @@ public class ContentController : ControllerBase
     }
 
     [HttpGet]
+    [Route("GetContent")]
     public async Task<IActionResult> GetContent()
     {
         var content = await _contentCollection.Find(c => true).ToListAsync();
@@ -36,6 +37,7 @@ public class ContentController : ControllerBase
     }
 
     [HttpPost]
+    [Route("CreateContent")]
     public async Task<IActionResult> CreateContent([FromBody] ContentModel content)
     {
         await _contentCollection.InsertOneAsync(content);
@@ -43,7 +45,8 @@ public class ContentController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateContent(string id, [FromBody] ContentModel content)
+    //[Route("UpdateContent")]
+    public async Task<IActionResult> UpdateContent(int id, [FromBody] ContentModel content)
     {
         var result = await _contentCollection.ReplaceOneAsync(c => c.Id == id, content);
         if (result.MatchedCount == 0) return NotFound();

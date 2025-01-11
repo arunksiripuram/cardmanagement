@@ -2,7 +2,7 @@ namespace CardManagementAPI.Models
 {
     public class ContentModel
     {
-        public string? Id { get; set; }
+        public int? Id { get; set; }
 
         // Card Form Labels
         public string? CardHolderLabel { get; set; }

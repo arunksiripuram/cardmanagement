@@ -5,6 +5,16 @@ builder.Services.AddSignalR(); // Register SignalR services
 builder.Services.AddControllers();
 // builder.Services.AddSingleton<IMongoClient, MongoClient>(); // MongoDB connection setup
 
+// Allow CORS
+builder.Services.AddCors(options =>
+{
+  options.AddPolicy("AllowAll", builder =>
+  {
+    builder.AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader();
+  });
+});
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -24,16 +34,22 @@ builder.Services.AddScoped<IMongoDatabase>(sp =>
 
 builder.Services.AddSwaggerGen();            // Adds Swagger support
 var app = builder.Build();
-        app.MapControllers();
-        app.MapHub<ContentHub>("/contentHub");  // Map the SignalR hub
+
+
+// Use CORS policy
+app.UseCors("AllowAll");
+
+app.MapControllers();
+app.MapHub<ContentHub>("/contentHub");  // Map the SignalR hub
+
 
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    // Enable Swagger middleware only in Development mode
-    app.UseSwagger();                 // This will enable the Swagger JSON generation
+  app.MapOpenApi();
+  // Enable Swagger middleware only in Development mode
+  app.UseSwagger();                 // This will enable the Swagger JSON generation
     app.UseSwaggerUI();              // This will enable the Swagger UI in the browser
 }
 
