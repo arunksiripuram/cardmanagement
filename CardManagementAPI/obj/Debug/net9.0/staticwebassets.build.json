@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "GS/yGY6UeD2ZuQORhE3JAVVM2JvVeq//xUeJMfOhYeU=",
+  "Source": "CardManagementAPI",
+  "BasePath": "_content/CardManagementAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
