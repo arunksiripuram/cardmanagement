@@ -34,7 +34,7 @@ builder.Services.AddCors(options =>
 {
   options.AddPolicy("AllowSpecificOrigins", builder =>
   {
-    builder.WithOrigins("http://localhost:4200", "https://cardmanagementapi-cferaphyh6hea4fg.centralindia-01.azurewebsites.net") // Allow specific origins
+    builder.WithOrigins("http://localhost:4200", "https://cardmanagementapi-cferaphyh6hea4fg.centralindia-01.azurewebsites.net", "https://delightful-field-0830f091e.4.azurestaticapps.net") // Allow specific origins
            .AllowCredentials()  // Allow credentials (cookies, authorization headers, etc.)
            .AllowAnyMethod()    // Allow any HTTP method (GET, POST, PUT, DELETE, etc.)
            .AllowAnyHeader();   // Allow any headers
