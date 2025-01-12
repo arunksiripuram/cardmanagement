@@ -1,0 +1,331 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "CardManagementAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/weatherforecast": {
+      "get": {
+        "tags": [
+          "CardManagementAPI"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Content": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Content/{id}": {
+      "put": {
+        "tags": [
+          "Content"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ContentModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cardHolderLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardHolderPlaceholder": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardTypeLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardTypeSelectDefault": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardNumberLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardNumberPlaceholder": {
+            "type": "string",
+            "nullable": true
+          },
+          "cvvLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "cvvPlaceholder": {
+            "type": "string",
+            "nullable": true
+          },
+          "expirationDateLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "expirationMonthPlaceholder": {
+            "type": "string",
+            "nullable": true
+          },
+          "expirationYearPlaceholder": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine1Placeholder": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2Placeholder": {
+            "type": "string",
+            "nullable": true
+          },
+          "cityLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "cityPlaceholder": {
+            "type": "string",
+            "nullable": true
+          },
+          "stateLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "stateSelectDefault": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipPlaceholder": {
+            "type": "string",
+            "nullable": true
+          },
+          "countryLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "countrySelectDefault": {
+            "type": "string",
+            "nullable": true
+          },
+          "useAsPrimaryCardLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "footerText": {
+            "type": "string",
+            "nullable": true
+          },
+          "addCardButtonText": {
+            "type": "string",
+            "nullable": true
+          },
+          "cancelButtonText": {
+            "type": "string",
+            "nullable": true
+          },
+          "newsletterLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "newsletterPlaceholder": {
+            "type": "string",
+            "nullable": true
+          },
+          "signUpButtonText": {
+            "type": "string",
+            "nullable": true
+          },
+          "surveyText": {
+            "type": "string",
+            "nullable": true
+          },
+          "surveyLinkText": {
+            "type": "string",
+            "nullable": true
+          },
+          "termsAndConditionsText": {
+            "type": "string",
+            "nullable": true
+          },
+          "privacyPolicyText": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DateOnly": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "month": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "day": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "dayOfWeek": {
+            "$ref": "#/components/schemas/DayOfWeek"
+          },
+          "dayOfYear": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "dayNumber": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DayOfWeek": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "$ref": "#/components/schemas/DateOnly"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
