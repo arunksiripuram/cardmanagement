@@ -12,6 +12,7 @@ export class SignalrService {
   private connection!: HubConnection;
   private messagesSource = new BehaviorSubject<any[]>([]);
   currentMessages = this.messagesSource.asObservable();
+  public currentLabels = new BehaviorSubject<any>({}); 
 
 
 
@@ -34,6 +35,11 @@ export class SignalrService {
           .build();
 
           console.log("Test1")
+          // Listen for label updates from the server
+          this.connection.on('ReceiveLabelUpdate', (labels: any) => {
+            console.log(labels)
+            this.currentLabels.next(labels);  // Emit updated labels to subscribers
+          });
     
         this.connection.start()
           .then(() => {

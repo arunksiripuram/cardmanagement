@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddNewcardComponent } from './userModule/add-newcard/add-newcard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateCardLabelComponent } from './adminModule/update-card-label/update-card-label.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 // angular.module('app', ['ngAnimate', 'toastr'])
 
@@ -18,7 +20,9 @@ import { UpdateCardLabelComponent } from './adminModule/update-card-label/update
     UserLoginComponent,
     AdminLoginComponent,
     AddNewcardComponent,
-    UpdateCardLabelComponent
+    UpdateCardLabelComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
