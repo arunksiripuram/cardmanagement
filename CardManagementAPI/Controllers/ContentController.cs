@@ -25,6 +25,7 @@ public class ContentController : ControllerBase
   private readonly IMongoCollection<ContentModel> _contentCollection;
   private readonly IHubContext<ContentHub> _hubContext;
 
+
   // Constructor to initialize MongoDB collection and SignalR HubContext
   public ContentController(IMongoDatabase database, IHubContext<ContentHub> hubContext)
   {
