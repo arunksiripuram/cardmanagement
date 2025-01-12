@@ -1,8 +1,11 @@
 <app-header></app-header>
-
-
 <div class="form-container">
     <h3 class="my-3">{{ formConfig.cardLabelDetails }}</h3>
+
+    <hr style="border: 1px solid #ddd; margin-bottom: 20px;" /> <!-- Thin separator line -->
+
+
+    <div style="margin-top: 30px;"> <!-- Space above the form -->
 
     <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
     <div class="row">
@@ -39,6 +42,7 @@
             </div>
         </div>
 
+
         <div class="col-4">
         <!-- Card Holder -->
             <div class="form-group">
@@ -54,13 +58,10 @@
         <!-- Card Holder -->
             <div class="form-group">
                 <label>{{ formConfig.expirationDateLabel }}</label>
-                <input
-                type="text"
-                formControlName="expirationDateLabel"
+                <input type="text" formControlName="expirationDateLabel"
                 />
             </div>
         </div>
-
 
         <div class="col-4">
         <!-- Card Holder -->
@@ -72,7 +73,7 @@
                 />
             </div>
         </div>        
-      
+        
         <div class="col-4">
         <!-- Card Holder -->
             <div class="form-group">
@@ -106,7 +107,6 @@
             </div>
         </div>
 
-      
         <div class="col-4">
         <!-- Card Holder -->
             <div class="form-group">
@@ -184,16 +184,6 @@
                                     </div>
                                 </div>
 
-                                <div class="col-4">
-                                    <!-- Card Holder -->
-                                        <div class="form-group">
-                                            <label>{{ formConfig.newsletterPlaceholder }}</label>
-                                            <input
-                                            type="text"
-                                            formControlName="newsletterPlaceholder"
-                                            />
-                                        </div>
-                                    </div>
 
                                     <div class="col-4">
                                         <!-- Card Holder -->
@@ -250,6 +240,8 @@
                                                             </div>
                                                         </div>
                                                         </div>
+    
+
         
   
       <!-- Buttons -->
@@ -259,11 +251,7 @@
           {{ formConfig.addCardButtonText }}
         </button>
       </div>
-  
-      <div class="footer-text">
-        {{ formConfig.termsAndConditionsText }}
-      </div>
     </form>
   </div>
-<app-footer></app-footer>
-  
+  </div>
+  <app-footer></app-footer>

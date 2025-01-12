@@ -194,6 +194,9 @@ public class ContentController : ControllerBase
       // Notify all connected clients that content has been updated, sending only the updated fields
       await _hubContext.Clients.All.SendAsync("ReceiveContentUpdate", updatedFields);
 
+      // Notify all connected clients that content has been updated, sending only the updated fields
+      await _hubContext.Clients.All.SendAsync("ReceiveLabelUpdate", updatedFields);
+
       // Return a custom status code and message
       var response = new
       {
