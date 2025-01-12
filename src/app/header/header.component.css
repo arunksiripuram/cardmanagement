@@ -1,0 +1,146 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Main header container */
+  header {
+    background-color: #4A4A4A;
+    color: white;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 50px 0;
+    position: relative;
+  }
+  .header-container:after{
+    content: "";
+    position: absolute;
+    bottom: -28px;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    background: url('../../assets/header_border.png') repeat-x;
+  }
+  .logo-block{ position: relative; width: 332px; min-height: 94px; z-index: 3;}
+  .logo{position: absolute;
+    left: -20px;
+    top: -38px;
+    width: 100%;}
+  .logo img {
+    width: 100%;
+  }
+  .header-right{
+    padding: 10px 20px;}
+  /* Navbar links */
+  .navbar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .nav-links li a:hover {
+    color: #0d6efd;
+  }
+  
+  /* Account Info */
+  .account-info {
+    text-align: right;
+  }
+  
+  .account-info span {
+    display: block;
+  }
+  
+  .account-number, .account-type, .account-status, .rebill-type {
+    font-size: 14px;
+  }
+  
+  /* Actions (Notifications, Language, Logout) */
+  .header-actions {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: end;
+  }
+  
+  .notifications {
+    position: relative;
+  }
+  
+  .notifications-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  .header-actions{ padding-top: 20px;}
+  .language-selector a{
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 10px; padding-right: 10px;
+  }
+  
+  .logout-btn {
+    background-color: #cccccc;
+    border: none;
+    padding: 5px 10px;
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 10px 70px 10px 30px;
+    position: relative;
+
+  }
+  .logout-btn::before {
+    content: " ";
+    position: absolute;
+    right: 7px;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+    background-color: #8E8E8E;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .logout-btn::after {
+    content: url('../../assets/login-arrow.png') ;
+    position: absolute;
+    right: 14px;
+    top: 58%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  .logout-btn:hover {
+    background-color: #0056b3;
+  }
+  
