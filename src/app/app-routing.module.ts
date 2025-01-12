@@ -6,11 +6,18 @@ import { AddNewcardComponent } from './userModule/add-newcard/add-newcard.compon
 import { UpdateCardLabelComponent } from './adminModule/update-card-label/update-card-label.component';
 
 const routes: Routes = [
-  { path: 'admin-login', component: AdminLoginComponent },
+  // { path: 'admin-login', component: AdminLoginComponent },
   { path: 'user-login', component: UserLoginComponent },
   { path: 'add-new-card', component: AddNewcardComponent },
   { path: 'update-card-label', component: UpdateCardLabelComponent },
   { path: '', redirectTo: '/user-login', pathMatch: 'full' },
+  {
+    path: 'admin-login',
+    component: AdminLoginComponent,
+    data: {
+      title: 'Login Page'
+    }
+  },
 ];
 
 @NgModule({
