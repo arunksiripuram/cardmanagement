@@ -1,0 +1,20 @@
+{
+    "routing": {
+      "routes": [
+        {
+          "route": "/admin-login",
+          "serve": "/index.html"
+        },
+        {
+          "route": "/user-login",
+          "serve": "/index.html"
+        },
+        {
+          "route": "/*",
+          "serve": "/index.html",
+          "statusCode": 200
+        }
+      ]
+    }
+  }
+  
