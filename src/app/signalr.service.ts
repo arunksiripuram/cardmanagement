@@ -10,10 +10,10 @@ import { BehaviorSubject } from 'rxjs';
 export class SignalrService {
 
   private connection!: HubConnection;
-  private messagesSource = new BehaviorSubject<any[]>([]);
+  public messagesSource = new BehaviorSubject<any[]>([]);
   currentMessages = this.messagesSource.asObservable();
   public currentLabels = new BehaviorSubject<any>({}); 
-
+  public loggedInSubject = new BehaviorSubject<boolean>(false);
 
 
     private _baseUrl: string ="https://cardmanagementapi-cferaphyh6hea4fg.centralindia-01.azurewebsites.net/api/";
@@ -36,16 +36,15 @@ export class SignalrService {
 
           console.log("Test1")
           // Listen for label updates from the server
-          this.connection.on('ReceiveLabelUpdate', (labels: any) => {
-            console.log(labels)
-            this.currentLabels.next(labels);  // Emit updated labels to subscribers
-          });
+         
     
         this.connection.start()
           .then(() => {
             console.log('SignalR connected');
             localStorage.setItem('hubConnectionId', '1120');
+            this.loggedInSubject.next(true);
             this.registerOnServerEvents();
+            this.updateLabels();
           })
           .catch((err) => {
             console.error('Error while starting connection: ' + err);
@@ -54,11 +53,18 @@ export class SignalrService {
           console.log(localStorage.getItem('hubConnectionId'))
       }
 
-      private registerOnServerEvents() {
+      public registerOnServerEvents() {
         // For example, listening for messages from SignalR Hub
         this.connection.on('ReceiveContentUpdate', (message: any) => {
-          console.log('ReceiveContentUpdate', message);
+          console.log('ReceiveContentUpdate1', message);
           this.messagesSource.next(message);
+        });
+      }
+
+      public updateLabels() {
+        this.connection.on('ReceiveLabelUpdate', (labels: any) => {
+          console.log('ReceiveLabelUpdate1',labels)
+          this.currentLabels.next(labels);  // Emit updated labels to subscribers
         });
       }
       

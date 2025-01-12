@@ -40,7 +40,10 @@ export class AddNewcardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getLabelValue();
+    // this.getLabelValue();
+    this.signalrService.messagesSource.subscribe((loggedIn: any) => {
+        this.getLabelValue();
+    }); 
   }
 
   labelNames:any=[];
@@ -58,6 +61,12 @@ export class AddNewcardComponent implements OnInit {
       console.log('Form Submitted', this.cardForm.value);
       // Call API here
     }
+  }
+
+  // Update labels dynamically
+  onLabelUpdate(updatedLabels: any): void {
+    console.log('onLabelUpdate',updatedLabels)
+    this.labelNames = updatedLabels;  // Update label values dynamically
   }
 
   addCard(cardData: any): Observable<any> {

@@ -15,21 +15,6 @@ export class UpdateCardLabelComponent implements OnInit {
   constructor(private fb: FormBuilder, private signalrService: SignalrService ) {
     // Initialize the form structure
     this.cardForm = this.fb.group({
-      // cardLabelDetails: ['', Validators.required],
-      // cardType: ['', Validators.required],
-      // cardNumber: ['', [Validators.required, Validators.pattern(/^\d{16}$/)]],
-      // cvv: ['', [Validators.required, Validators.pattern(/^\d{3,4}$/)]],
-      // expMonth: ['', Validators.required],
-      // expYear: ['', Validators.required],
-      // addressLine1: ['', Validators.required],
-      // addressLine2: [''],
-      // city: ['', Validators.required],
-      // state: ['', Validators.required],
-      // zip: ['', Validators.required],
-      // country: ['USA', Validators.required],
-      // primaryCard: [false],
-      // newsletterEmail: [''],
-
       cardHolder:['',Validators.required],
       cardTypeLabel: ['',Validators.required],
       cardTypeSelectDefault: ['',Validators.required],
@@ -165,6 +150,7 @@ export class UpdateCardLabelComponent implements OnInit {
 
    // Update labels dynamically
    onLabelUpdate(updatedLabels: any): void {
+    console.log('onLabelUpdate',updatedLabels)
     this.labelNames = updatedLabels;  // Update label values dynamically
   }
 
