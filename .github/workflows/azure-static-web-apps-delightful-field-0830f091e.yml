@@ -19,6 +19,13 @@ jobs:
         with:
           submodules: true
           lfs: false
+      
+      - name: Set OpenSSL Legacy Provider for Node.js
+        run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV  # Set environment variable for Node.js
+
+      - name: Install Dependencies
+        run: npm install  # Install dependencies if necessary
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
