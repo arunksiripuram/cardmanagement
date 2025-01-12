@@ -89,8 +89,8 @@ public class ContentController : ControllerBase
     if (content.CardHolderLabel != existingContent.CardHolderLabel)
       updatedFields["CardHolderLabel"] = content.CardHolderLabel;
 
-    if (content.CardHolderPlaceholder != existingContent.CardHolderPlaceholder)
-      updatedFields["CardHolderPlaceholder"] = content.CardHolderPlaceholder;
+    //if (content.CardHolderPlaceholder != existingContent.CardHolderPlaceholder)
+    //  updatedFields["CardHolderPlaceholder"] = content.CardHolderPlaceholder;
 
     if (content.CardTypeLabel != existingContent.CardTypeLabel)
       updatedFields["CardTypeLabel"] = content.CardTypeLabel;
@@ -101,38 +101,38 @@ public class ContentController : ControllerBase
     if (content.CardNumberLabel != existingContent.CardNumberLabel)
       updatedFields["CardNumberLabel"] = content.CardNumberLabel;
 
-    if (content.CardNumberPlaceholder != existingContent.CardNumberPlaceholder)
-      updatedFields["CardNumberPlaceholder"] = content.CardNumberPlaceholder;
+    //if (content.CardNumberPlaceholder != existingContent.CardNumberPlaceholder)
+    //  updatedFields["CardNumberPlaceholder"] = content.CardNumberPlaceholder;
 
     if (content.CVVLabel != existingContent.CVVLabel)
       updatedFields["CVVLabel"] = content.CVVLabel;
 
-    if (content.CVVPlaceholder != existingContent.CVVPlaceholder)
-      updatedFields["CVVPlaceholder"] = content.CVVPlaceholder;
+    //if (content.CVVPlaceholder != existingContent.CVVPlaceholder)
+    //  updatedFields["CVVPlaceholder"] = content.CVVPlaceholder;
 
     if (content.ExpirationDateLabel != existingContent.ExpirationDateLabel)
       updatedFields["ExpirationDateLabel"] = content.ExpirationDateLabel;
 
-    if (content.ExpirationMonthPlaceholder != existingContent.ExpirationMonthPlaceholder)
-      updatedFields["ExpirationMonthPlaceholder"] = content.ExpirationMonthPlaceholder;
+    //if (content.ExpirationMonthPlaceholder != existingContent.ExpirationMonthPlaceholder)
+    //  updatedFields["ExpirationMonthPlaceholder"] = content.ExpirationMonthPlaceholder;
 
-    if (content.ExpirationYearPlaceholder != existingContent.ExpirationYearPlaceholder)
-      updatedFields["ExpirationYearPlaceholder"] = content.ExpirationYearPlaceholder;
+    //if (content.ExpirationYearPlaceholder != existingContent.ExpirationYearPlaceholder)
+    //  updatedFields["ExpirationYearPlaceholder"] = content.ExpirationYearPlaceholder;
 
     if (content.AddressLabel != existingContent.AddressLabel)
       updatedFields["AddressLabel"] = content.AddressLabel;
 
-    if (content.AddressLine1Placeholder != existingContent.AddressLine1Placeholder)
-      updatedFields["AddressLine1Placeholder"] = content.AddressLine1Placeholder;
+    //if (content.AddressLine1Placeholder != existingContent.AddressLine1Placeholder)
+    //  updatedFields["AddressLine1Placeholder"] = content.AddressLine1Placeholder;
 
-    if (content.AddressLine2Placeholder != existingContent.AddressLine2Placeholder)
-      updatedFields["AddressLine2Placeholder"] = content.AddressLine2Placeholder;
+    //if (content.AddressLine2Placeholder != existingContent.AddressLine2Placeholder)
+    //  updatedFields["AddressLine2Placeholder"] = content.AddressLine2Placeholder;
 
     if (content.CityLabel != existingContent.CityLabel)
       updatedFields["CityLabel"] = content.CityLabel;
 
-    if (content.CityPlaceholder != existingContent.CityPlaceholder)
-      updatedFields["CityPlaceholder"] = content.CityPlaceholder;
+    //if (content.CityPlaceholder != existingContent.CityPlaceholder)
+    //  updatedFields["CityPlaceholder"] = content.CityPlaceholder;
 
     if (content.StateLabel != existingContent.StateLabel)
       updatedFields["StateLabel"] = content.StateLabel;
@@ -143,8 +143,8 @@ public class ContentController : ControllerBase
     if (content.ZipLabel != existingContent.ZipLabel)
       updatedFields["ZipLabel"] = content.ZipLabel;
 
-    if (content.ZipPlaceholder != existingContent.ZipPlaceholder)
-      updatedFields["ZipPlaceholder"] = content.ZipPlaceholder;
+    //if (content.ZipPlaceholder != existingContent.ZipPlaceholder)
+    //  updatedFields["ZipPlaceholder"] = content.ZipPlaceholder;
 
     if (content.CountryLabel != existingContent.CountryLabel)
       updatedFields["CountryLabel"] = content.CountryLabel;
@@ -167,8 +167,8 @@ public class ContentController : ControllerBase
     if (content.NewsletterLabel != existingContent.NewsletterLabel)
       updatedFields["NewsletterLabel"] = content.NewsletterLabel;
 
-    if (content.NewsletterPlaceholder != existingContent.NewsletterPlaceholder)
-      updatedFields["NewsletterPlaceholder"] = content.NewsletterPlaceholder;
+    //if (content.NewsletterPlaceholder != existingContent.NewsletterPlaceholder)
+    //  updatedFields["NewsletterPlaceholder"] = content.NewsletterPlaceholder;
 
     if (content.SignUpButtonText != existingContent.SignUpButtonText)
       updatedFields["SignUpButtonText"] = content.SignUpButtonText;
