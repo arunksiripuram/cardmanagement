@@ -19,16 +19,28 @@ builder.Services.AddSignalR(options =>
 builder.Services.AddControllers();
 
 // Configure CORS to allow any origin, method, and header
+//builder.Services.AddCors(options =>
+//{
+//  options.AddPolicy("AllowAll", builder =>
+//  {
+//    builder.AllowAnyOrigin()
+//            .AllowCredentials()
+//           .AllowAnyMethod()
+//           .AllowAnyHeader();
+//  });
+//});
+
 builder.Services.AddCors(options =>
 {
-  options.AddPolicy("AllowAll", builder =>
+  options.AddPolicy("AllowSpecificOrigins", builder =>
   {
-    builder.AllowAnyOrigin()
-            .AllowCredentials()
-           .AllowAnyMethod()
-           .AllowAnyHeader();
+    builder.WithOrigins("http://localhost:4200", "https://cardmanagementapi-cferaphyh6hea4fg.centralindia-01.azurewebsites.net") // Allow specific origins
+           .AllowCredentials()  // Allow credentials (cookies, authorization headers, etc.)
+           .AllowAnyMethod()    // Allow any HTTP method (GET, POST, PUT, DELETE, etc.)
+           .AllowAnyHeader();   // Allow any headers
   });
 });
+
 
 // MongoDB connection setup
 builder.Services.AddSingleton<IMongoClient, MongoClient>(sp =>
@@ -60,7 +72,7 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 // Use CORS policy
-app.UseCors("AllowAll");
+app.UseCors("AllowSpecificOrigins");
 
 // Enable WebSockets for SignalR
 app.UseWebSockets();

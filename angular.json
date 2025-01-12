@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "cardmanagement"
+  "defaultProject": "cardmanagement",
+  "cli": {
+    "analytics": "9dc742bf-2a0a-4938-b81c-9ecb371fa0a6"
+  }
 }
